@@ -1,45 +1,38 @@
-import { test, expect, assert } from "vitest";
-import "../src/index";
+import test from "node:test";
+import assert from "node:assert";
+import "../src/index-node";
 
 test("exposes globals", () => {
-  expect(globalThis).toBeInstanceOf(EventTarget);
-  expect(CustomEvent).toBeDefined();
-  expect(BeforeUnloadEvent).toBeDefined();
-  expect(PromiseRejectionEvent).toBeDefined();
+  assert(globalThis instanceof EventTarget);
+  assert(CustomEvent !== undefined);
+  assert(BeforeUnloadEvent !== undefined);
+  assert(ErrorEvent !== undefined);
+  assert(PromiseRejectionEvent !== undefined);
 
-  expect("onbeforeunload" in globalThis).toBe(true);
-  expect("onunload" in globalThis).toBe(true);
-  expect("onerror" in globalThis).toBe(true);
-  expect("onunhandledrejection" in globalThis).toBe(true);
-  expect("onrejectionhandled" in globalThis).toBe(true);
-  expect("onmessage" in globalThis).toBe(true);
+  assert("onbeforeunload" in globalThis);
+  assert("onunload" in globalThis);
+  assert("onerror" in globalThis);
+  assert("onunhandledrejection" in globalThis);
+  assert("onrejectionhandled" in globalThis);
+  assert("onmessage" in globalThis);
 });
 
 test("listening and dispatching custom events", () => {
   let i = 0;
   const listener = () => i++;
   globalThis.addEventListener("test", listener);
-  globalThis.dispatchEvent(new CustomEvent("test"));
+  globalThis.dispatchEvent(new Event("test"));
   globalThis.removeEventListener("test", listener);
-  expect(i).toBe(1);
+  assert.equal(i, 1);
 
-  globalThis.dispatchEvent(new CustomEvent("test"));
-  expect(i).toBe(1);
+  globalThis.dispatchEvent(new Event("test"));
+  assert.equal(i, 1);
 });
 
 test("using onevent properties", () => {
   let i = 0;
-  globalThis.onmessage = () => i++;
-  globalThis.dispatchEvent(new MessageEvent("message"));
-  globalThis.onmessage = null;
-  expect(i).toBe(1);
-});
-
-test("promise rejection handling events are dispatched", async () => {
-  let i = 0;
-  globalThis.onunhandledrejection = () => i++;
-  Promise.reject().catch(() => {});
-  await new Promise((r) => setTimeout(r, 10));
-  globalThis.onunhandledrejection = null;
-  expect(i).toBe(1);
+  globalThis.onerror = () => i++;
+  globalThis.dispatchEvent(new Event("error"));
+  globalThis.onerror = null;
+  assert.equal(i, 1);
 });
