@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@jcbhmr/web-events": "^1.0.0"
+  }
+}
