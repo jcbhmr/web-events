@@ -1,4 +1,8 @@
-import initEventTarget from "./internal/initEventTarget";
+/**
+ * Default no-other-option polyfill that doesn't need to copy internal state.
+ *
+ * @file
+ */
 
 declare global {
   // @ts-ignore
@@ -9,5 +13,6 @@ declare global {
   var dispatchEvent: EventTarget["dispatchEvent"];
 }
 
-Object.setPrototypeOf(globalThis, EventTarget.prototype);
-initEventTarget(globalThis);
+Object.setPrototypeOf(globalThis, new EventTarget());
+
+export {};
