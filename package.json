@@ -1,37 +1,52 @@
 {
-  "name": "web-events",
+  "name": "@jcbhmr/web-events",
   "version": "1.0.0",
-  "description": "⏰ Makes globalThis an EventTarget and emits various web events",
-  "keywords": [],
-  "license": "ISC",
-  "author": "",
+  "description": "⏰ Make the global an EventTarget and dispatch process events globally",
+  "keywords": [
+    "nodejs",
+    "polyfill",
+    "events",
+    "utils",
+    "ponyfill",
+    "eventtarget"
+  ],
+  "license": "MIT",
+  "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
+  "type": "module",
   "exports": {
     ".": {
       "node": "./dist/index-node.js",
       "default": "./dist/index.js"
     },
-    "./error-event-polyfill": {
+    "./global-is-EventTarget-polyfill.js": {
+      "deno": "./dist/global-is-EventTarget-polyfill.js",
+      "bun": "./dist/global-is-EventTarget-polyfill.js",
+      "node": "./dist/global-is-EventTarget-polyfill-node.js",
+      "default": "./dist/global-is-EventTarget-polyfill.js"
+    },
+    "./error-event-polyfill.js": {
       "node": "./dist/error-event-polyfill-node.js"
     },
-    "./unhandledrejection-event-polyfill": {
+    "./unhandledrejection-event-polyfill.js": {
       "node": "./dist/unhandledrejection-event-polyfill-node.js"
     },
-    "./rejectionhandled-event-polyfill": {
+    "./rejectionhandled-event-polyfill.js": {
       "node": "./dist/rejectionhandled-event-polyfill-node.js"
     },
-    "./beforeunload-event-polyfill": {
+    "./beforeunload-event-polyfill.js": {
       "node": "./dist/beforeunload-event-polyfill-node.js"
     },
-    "./unload-event-polyfill": {
+    "./unload-event-polyfill.js": {
       "node": "./dist/unload-event-polyfill-node.js"
     },
     "./*.js": "./dist/*.js",
     "./internal/*": null
   },
   "scripts": {
+    "build-docs": "typedoc",
     "prepack": "tsc",
     "start": "tsx --test --watch",
-    "test": "tsx --test"
+    "test": "tsc --noEmit && tsx --test"
   },
   "devDependencies": {
     "@types/node": "^20.2.1",
