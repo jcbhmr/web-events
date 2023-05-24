@@ -18,11 +18,3 @@ test("listening and dispatching custom events", () => {
   globalThis.dispatchEvent(new Event("test"));
   assert.equal(i, 1);
 });
-
-test("using onevent properties", () => {
-  let i = 0;
-  globalThis.onerror = () => i++;
-  globalThis.dispatchEvent(new Event("error"));
-  globalThis.onerror = null;
-  assert.equal(i, 1);
-});

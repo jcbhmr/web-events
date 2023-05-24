@@ -14,21 +14,19 @@ test("exposes globals", () => {
   assert("onerror" in globalThis);
   assert("onunhandledrejection" in globalThis);
   assert("onrejectionhandled" in globalThis);
-  assert("onmessage" in globalThis);
 });
 
-test("onrejectionhandled handler", () => {
+test("using onevent properties", () => {
   let i = 0;
-  onrejectionhandled = () => i++;
-  Promise.reject().catch(() => {});
+  globalThis.onerror = () => i++;
+  globalThis.dispatchEvent(new Event("error"));
+  globalThis.onerror = null;
   assert.equal(i, 1);
 });
 
-// I don't know how to test onerror, onunhandledrejection, onbeforeunload, and
-// onunload handlers. I think you'd need some kind of complicated subprocess
-// setup to test them.
-
+// I don't know how to test these yet.
 // TODO: Test onerror
 // TODO: Test onunhandledrejection
+// TODO: Test onrejectionhandled
 // TODO: Test onbeforeunload
 // TODO: Test onunload

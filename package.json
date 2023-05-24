@@ -51,8 +51,9 @@
   "scripts": {
     "build-docs": "typedoc",
     "prepack": "tsc",
-    "start": "tsx --test --watch",
-    "test": "tsc --noEmit && tsx --test"
+    "start": "tsx --test --watch test/**.test.ts",
+    "pretest": "prettier --ignore-path .gitignore -w .",
+    "test": "tsc --noEmit && tsx --test test/**.test.ts"
   },
   "devDependencies": {
     "@types/node": "^20.2.1",
