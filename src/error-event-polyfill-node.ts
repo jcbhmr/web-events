@@ -1,7 +1,7 @@
-import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute";
+import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute.js";
 
 if (typeof ErrorEvent === "undefined") {
-  await import("./ErrorEvent-polyfill");
+  await import("./ErrorEvent-polyfill.js");
 }
 
 declare global {

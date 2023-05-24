@@ -1,5 +1,5 @@
-import ErrorEvent_ from "./ErrorEvent";
-import ErrorEventInit_ from "./ErrorEventInit";
+import ErrorEvent_ from "./ErrorEvent.js";
+import ErrorEventInit_ from "./ErrorEventInit.js";
 
 declare global {
   // @ts-ignore

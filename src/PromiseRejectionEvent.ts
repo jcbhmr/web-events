@@ -1,4 +1,4 @@
-import PromiseRejectionEventInit from "./PromiseRejectionEventInit";
+import PromiseRejectionEventInit from "./PromiseRejectionEventInit.js";
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/API/PromiseRejectionEvent

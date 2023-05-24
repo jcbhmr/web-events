@@ -1,4 +1,4 @@
-import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute";
+import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute.js";
 
 declare global {
   var onunload: ((this: Window, e: Event) => any) | null;

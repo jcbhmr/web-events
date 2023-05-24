@@ -1,7 +1,7 @@
-import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute";
+import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute.js";
 
 if (typeof BeforeUnloadEvent === "undefined") {
-  await import("./BeforeUnloadEvent-polyfill");
+  await import("./BeforeUnloadEvent-polyfill.js");
 }
 
 declare global {

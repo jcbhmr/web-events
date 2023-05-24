@@ -1,4 +1,4 @@
-import BeforeUnloadEvent_ from "./BeforeUnloadEvent";
+import BeforeUnloadEvent_ from "./BeforeUnloadEvent.js";
 
 declare global {
   // @ts-ignore

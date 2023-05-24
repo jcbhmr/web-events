@@ -1,5 +1,5 @@
-import PromiseRejectionEvent_ from "./PromiseRejectionEvent";
-import PromiseRejectionEventInit_ from "./PromiseRejectionEventInit";
+import PromiseRejectionEvent_ from "./PromiseRejectionEvent.js";
+import PromiseRejectionEventInit_ from "./PromiseRejectionEventInit.js";
 
 declare global {
   // @ts-ignore

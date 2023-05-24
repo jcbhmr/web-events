@@ -1,7 +1,7 @@
-import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute";
+import defineEventHandlerIDLAttribute from "./defineEventHandlerIDLAttribute.js";
 
 if (typeof PromiseRejectionEvent === "undefined") {
-  await import("./PromiseRejectionEvent-polyfill");
+  await import("./PromiseRejectionEvent-polyfill.js");
 }
 
 declare global {

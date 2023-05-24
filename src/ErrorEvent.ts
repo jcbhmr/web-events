@@ -1,4 +1,4 @@
-import ErrorEventInit from "./ErrorEventInit";
+import ErrorEventInit from "./ErrorEventInit.js";
 
 export default class ErrorEvent extends Event {
   #error: Error;
