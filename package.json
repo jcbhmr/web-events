@@ -10,6 +10,9 @@
     "ponyfill",
     "eventtarget"
   ],
+  "homepage": "https://jcbhmr.github.io/web-events",
+  "bugs": "https://github.com/jcbhmr/web-events/issues",
+  "repository": "github:jcbhmr/web-events",
   "license": "MIT",
   "author": "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
   "type": "module",
@@ -42,6 +45,9 @@
     "./*.js": "./dist/*.js",
     "./internal/*": null
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build-docs": "typedoc",
     "prepack": "tsc",
