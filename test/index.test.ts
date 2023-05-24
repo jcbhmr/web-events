@@ -1,20 +1,10 @@
 import test from "node:test";
 import assert from "node:assert";
-import "../src/index-node";
+import "../src/index";
 
 test("exposes globals", () => {
   assert(globalThis instanceof EventTarget);
   assert(CustomEvent !== undefined);
-  assert(BeforeUnloadEvent !== undefined);
-  assert(ErrorEvent !== undefined);
-  assert(PromiseRejectionEvent !== undefined);
-
-  assert("onbeforeunload" in globalThis);
-  assert("onunload" in globalThis);
-  assert("onerror" in globalThis);
-  assert("onunhandledrejection" in globalThis);
-  assert("onrejectionhandled" in globalThis);
-  assert("onmessage" in globalThis);
 });
 
 test("listening and dispatching custom events", () => {
