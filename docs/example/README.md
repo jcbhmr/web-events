@@ -1,4 +1,4 @@
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/jcbhmr/html-events/tree/main/docs/example)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/jcbhmr/web-events/tree/main/docs/example)
 
 Run `node --import @jcbhmr/web-events` to get started! This will launch an
 interactive REPL that has the polyfill preloaded ready for experimentation.
